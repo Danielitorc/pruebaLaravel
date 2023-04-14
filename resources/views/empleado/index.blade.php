@@ -1,1 +1,1 @@
-/* Aqui se mostrara la lista de empleados */
+//Aqui se mostrara la lista de empleados 
