@@ -15,6 +15,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         //
+        return view('empleado.index');
     }
 
     /**
@@ -25,6 +26,7 @@ class EmpleadoController extends Controller
     public function create()
     {
         //
+        return view('empleado.create');
     }
 
     /**
@@ -35,7 +37,12 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Elimino el campo del token
+        $datosEmpleado = request()->except('_token');
+        //Inserto los datos a la BD
+        Empleado::insert($datosEmpleado);
+
+        return response()->json($datosEmpleado);
     }
 
     /**
